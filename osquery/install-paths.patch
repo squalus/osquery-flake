@@ -1,0 +1,184 @@
+diff --git a/cmake/install_directives.cmake b/cmake/install_directives.cmake
+index c64e8ae..3f23594 100644
+--- a/cmake/install_directives.cmake
++++ b/cmake/install_directives.cmake
+@@ -17,22 +17,22 @@ function(generateInstallDirectives)
+ 
+     install(
+       FILES "tools/deployment/linux_packaging/deb/conffiles"
+-      DESTINATION "/control/deb"
++      DESTINATION "control/deb"
+     )
+ 
+     install(
+       FILES "tools/deployment/linux_packaging/deb/osqueryd.service"
+-      DESTINATION "/control/deb/lib/systemd/system"
++      DESTINATION "control/deb/lib/systemd/system"
+     )
+ 
+     install(
+       FILES "tools/deployment/linux_packaging/deb/copyright"
+-      DESTINATION "/control/deb"
++      DESTINATION "control/deb"
+     )
+ 
+     install(
+       FILES "tools/deployment/linux_packaging/deb/osquery.initd"
+-      DESTINATION "/control/deb/etc/init.d"
++      DESTINATION "control/deb/etc/init.d"
+       RENAME "osqueryd"
+ 
+       PERMISSIONS
+@@ -43,7 +43,7 @@ function(generateInstallDirectives)
+ 
+     install(
+       FILES "tools/deployment/linux_packaging/rpm/osquery.initd"
+-      DESTINATION "/control/rpm/etc/init.d"
++      DESTINATION "control/rpm/etc/init.d"
+       RENAME "osqueryd"
+ 
+       PERMISSIONS
+@@ -54,12 +54,12 @@ function(generateInstallDirectives)
+ 
+     install(
+       FILES "tools/deployment/linux_packaging/rpm/osqueryd.service"
+-      DESTINATION "/control/rpm/lib/systemd/system"
++      DESTINATION "control/rpm/lib/systemd/system"
+     )
+ 
+     install(
+       FILES "tools/deployment/linux_packaging/postinst"
+-      DESTINATION "/control"
++      DESTINATION "control"
+     )
+ 
+     install(
+@@ -116,19 +116,19 @@ function(generateInstallDirectives)
+ 
+     install(
+       FILES "tools/deployment/linux_packaging/osqueryd.sysconfig"
+-      DESTINATION "/control/deb/etc/default"
++      DESTINATION "control/deb/etc/default"
+       RENAME "osqueryd"
+     )
+ 
+     install(
+       FILES "tools/deployment/linux_packaging/osqueryd.sysconfig"
+-      DESTINATION "/control/rpm/etc/sysconfig"
++      DESTINATION "control/rpm/etc/sysconfig"
+       RENAME "osqueryd"
+     )
+ 
+     install(
+       FILES "LICENSE"
+-      DESTINATION "/control"
++      DESTINATION "control"
+       RENAME "LICENSE.txt"
+     )
+ 
+@@ -159,36 +159,36 @@ function(generateInstallDirectives)
+ 
+     install(
+       DIRECTORY "tools/deployment/windows_packaging/chocolatey/tools"
+-      DESTINATION "/control/nupkg"
++      DESTINATION "control/nupkg"
+     )
+ 
+     install(
+       FILES "LICENSE"
+-      DESTINATION "/control/nupkg/extras"
++      DESTINATION "control/nupkg/extras"
+       RENAME "LICENSE.txt"
+     )
+ 
+     install(
+       FILES "LICENSE"
+-      DESTINATION "/control"
++      DESTINATION "control"
+       RENAME "LICENSE.txt"
+     )
+ 
+     # Icon for the MSI package
+     install(
+       FILES "tools/deployment/windows_packaging/osquery.ico"
+-      DESTINATION "/control"
++      DESTINATION "control"
+     )
+ 
+     # Icon for the nuget package
+     install(
+       FILES "tools/deployment/windows_packaging/osquery.png"
+-      DESTINATION "/control"
++      DESTINATION "control"
+     )
+ 
+     install(
+       FILES "tools/deployment/windows_packaging/chocolatey/VERIFICATION.txt"
+-      DESTINATION "/control/nupkg/extras"
++      DESTINATION "control/nupkg/extras"
+     )
+ 
+     install(
+@@ -219,17 +219,17 @@ function(generateInstallDirectives)
+ 
+     install(
+       FILES "tools/deployment/windows_packaging/manage-osqueryd.ps1"
+-      DESTINATION "/control/nupkg/extras"
++      DESTINATION "control/nupkg/extras"
+     )
+ 
+     install(
+       FILES "tools/deployment/windows_packaging/osquery_utils.ps1"
+-      DESTINATION "/control/nupkg/tools"
++      DESTINATION "control/nupkg/tools"
+     )
+ 
+     install(
+       FILES "tools/deployment/windows_packaging/msi/osquery_wix_patch.xml"
+-      DESTINATION "/control/msi"
++      DESTINATION "control/msi"
+     )
+ 
+     install(
+@@ -261,7 +261,7 @@ function(generateInstallDirectives)
+         "tools/deployment/macos_packaging/PkgInfo"
+ 
+       DESTINATION
+-        "/control"
++        "control"
+     )
+ 
+     install(
+@@ -306,12 +306,12 @@ function(generateInstallDirectives)
+ 
+     install(
+       DIRECTORY "packs"
+-      DESTINATION "/private/var/osquery"
++      DESTINATION "private/var/osquery"
+     )
+ 
+     install(
+       FILES "tools/deployment/certs.pem"
+-      DESTINATION "/private/var/osquery/certs"
++      DESTINATION "private/var/osquery/certs"
+     )
+ 
+     install(
+@@ -319,7 +319,7 @@ function(generateInstallDirectives)
+         "tools/deployment/osquery.example.conf"
+ 
+       DESTINATION
+-        "/private/var/osquery"
++        "private/var/osquery"
+     )
+ 
+     install(
+@@ -328,7 +328,7 @@ function(generateInstallDirectives)
+         "tools/deployment/macos_packaging/pkg/io.osquery.agent.plist"
+ 
+       DESTINATION
+-        "/control/pkg"
++        "control/pkg"
+     )
+ 
+     install(
