@@ -5,7 +5,7 @@
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
     systems.url = "github:nix-systems/default-linux";
     flake-utils = {
-      url = "flake:flake-utils";
+      url = "github:numtide/flake-utils";
       inputs.systems.follows = "systems";
     };
   };
