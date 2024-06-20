@@ -1,6 +1,7 @@
 { lib
 , cmake
 , fetchFromGitHub
+, fetchurl
 , git
 , perl
 , python3
@@ -35,7 +36,7 @@ let
 
   opensslInfo' = builtins.fromJSON (builtins.readFile opensslInfo);
 
-  opensslArchive = builtins.fetchurl {
+  opensslArchive = fetchurl {
     url = "https://www.openssl.org/source/openssl-${opensslInfo'.version}.tar.gz";
     inherit (opensslInfo') sha256;
   };

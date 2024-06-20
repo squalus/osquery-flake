@@ -8,4 +8,4 @@ cd "$scriptDir"/..
 
 set -x
 
-nix flake check -L
+nix flake check -L --option restrict-eval true
